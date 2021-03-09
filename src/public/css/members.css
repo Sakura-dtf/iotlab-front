@@ -1,0 +1,124 @@
+.photos {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.photos ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.photos ul li{
+    visibility: hidden;
+}
+
+
+
+.photos ul li{
+    margin: 20px 0;
+}
+
+
+.photos ul li a{
+    display: block;
+    padding: 10px 10px 0;
+    background: white;
+    border: 1px solid #dddddd;
+    box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.4);
+    transition: 1s all ease;
+}
+
+.photos ul li a:hover{
+    box-shadow: 8px 8px 13px rgba(50, 50, 50, 0.4);
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+
+.photos ul li a img{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.photos ul li a .photo-name{
+    text-align: center;
+    margin-top: 5px;
+
+}
+
+
+
+
+.photos ul li:nth-child(6n+0){
+    transform: rotate(8deg)!important;
+}
+
+.photos ul li:nth-child(6n+1){
+    transform: rotate(-6deg)!important;
+}
+
+
+.photos ul li:nth-child(6n+2){
+    transform: rotate(4deg)!important;
+}
+
+
+.photos ul li:nth-child(6n+3){
+    transform: rotate(-4deg)!important;
+}
+
+
+.photos ul li:nth-child(6n+4){
+    transform: rotate(3deg)!important;
+}
+
+
+
+.photos ul li:nth-child(6n+5){
+    transform: rotate(-3deg) !important;
+}
+
+
+/*
+.photos ul li:hover{
+    transform: rotate(0deg) !important;
+}
+
+*/
+
+
+
+
+
+/*
+
+.photos img{
+    max-width: 250px;
+    max-height: 250px;
+    padding: 10px 10px 15px;
+    background: white;
+    border: 1px solid #dddddd;
+    box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.4);
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    position: absolute;
+    z-index: 1;
+}
+
+.photos img:hover{
+    box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.4);
+    transform: rotate(0deg) scale(1.08);
+    -webkit-transform: rotate(0deg) scale(1.08);
+    z-index: 2;
+}
+
+.photos img:after{
+    content: '';
+}*/

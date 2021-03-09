@@ -1,0 +1,121 @@
+a{
+    color: #7087b0;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+ul , li  {
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+
+.my-container{
+    width: 100% ;
+}
+
+.container-view {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+
+
+.card{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+
+    min-height: 238px;
+    box-shadow: 0 3px 7.52px 0.48px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.card-body{
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+
+.a-icon{
+    margin-top: 12px;
+    display: flex;
+    justify-content: start;
+    color: #64b5f6;
+}
+
+
+
+.a-icon div{
+    position: relative;
+    left: 4px;
+    font-size: 10px;
+}
+
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+
+.elli {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}  /*换行*/
+
+
+.icon-name{
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 15px;
+    font-size: 20px;
+    color: #81d4fa;
+}
+
+.card-title{
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #ccc;
+}
+
+/*.mg-l20{
+    margin-left: 20px;
+}*/
+
+.pagination li{
+    margin-left: 20px;
+}
+
+.pagination li:nth-child(1){
+    margin-left: 0;
+}
+.pagination .active{
+    color: #64b5f6;
+}

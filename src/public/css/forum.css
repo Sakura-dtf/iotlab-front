@@ -1,0 +1,154 @@
+.forum-bg-container{
+    position: relative;
+    width: 100%;
+}
+
+.forum-bg{
+    position: absolute;
+    width: 100%;
+    height: 275px;
+    min-width: 1200px;
+    background: url("../images/indexBg.png") 0 65%;
+    background-size: cover;
+    z-index: -100;
+}
+
+.forum{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.forum .forum-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forum .category{
+    width: 8%;
+    margin-top: 20px;
+}
+
+
+
+.forum .article{
+    width: 60%;
+    position: relative;
+}
+
+.forum .article .article-view{
+    display: none;
+}
+
+.forum .article .active{
+    display: block;
+}
+
+.forum .commend{
+    width: 25%;
+    height: 520px;
+}
+
+.category-commend{
+    font-size: 12px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #e1f5fe;
+}
+
+.category .category-item{
+    font-size: 12px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.category .category-item:nth-child(6){
+    border-bottom: 1px solid #64b5f6;
+}
+
+.category .category-item:hover{
+    background-color: #f5f5f5;
+}
+
+.article .article-item{
+    height: 130px;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.article .article-item:hover{
+    background-color: #f5f5f5;
+}
+
+.article .article-title{
+    font-size: 1.2rem;
+}
+
+
+
+.article .article-describe{
+    font-size: 13px;
+    color: #555555;
+    margin-top: 15px;
+    word-wrap: break-word;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    max-height: 48px;
+    max-width: 98%;
+}
+
+/*
+.a-icon{
+    margin-top: 12px;
+    display: flex;
+    justify-content: start;
+    color: #64b5f6;
+}
+*/
+
+
+
+.a-icon div{
+    position: relative;
+    left: 4px;
+    font-size: 10px;
+}
+
+
+.article .article-item a{
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-item a .flimage{
+    width: 150px;
+    height: 110px;
+    border-radius: 10%;
+    transform: translateY(-10px);
+}
+
+.forum .carousel-item img {
+    vertical-align: middle;
+    border-style: none;
+    height: 150px;
+    border-radius: 4%;
+}
+
+.forum .card-content{
+    margin-top: 25px;
+}
+

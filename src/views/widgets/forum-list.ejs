@@ -1,0 +1,70 @@
+<% data.forEach(item => {%>
+    <% if(item.image) { %>
+        <li class="article-item">
+            <a href="/essay1/<%= item.id %>">
+                <div class="article-info">
+                    <div class="article-title">
+                        <%= item.title%>
+                    </div>
+
+                    <% if(item.describe) {%>
+                        <div class="article-describe elli" id="content">
+                            <%= item.describe%>
+                        </div>
+
+                    <%} else {%>
+                        <div class="article-describe elli" id="content">
+                            作者很懒没有写文章介绍
+                        </div>
+                    <% }%>
+
+                    <div class="a-icon">
+                        <!--<svg class="icon3" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_liulan-kongxin"></use>
+                        </svg>-->
+                        <div>阅读量： <%= item.readNum%> </div>
+                        <!--<svg class="icon4" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_daichuli"></use>
+                        </svg>-->
+                        <div>日期：<%= item.createdAt %></div>
+                    </div>
+                </div>
+                <img class="flimage" src="<%= item.image %>"  alt="">
+            </a>
+        </li>
+    <% } else {%>
+        <li class="article-item">
+            <a href="/essay1/<%= item.id %>" >
+                <div class="article-info">
+                    <div class="article-title">
+                        <%= item.title%>
+                    </div>
+                    <% if(item.describe) {%>
+                        <div class="article-describe elli" id="content">
+                            <%= item.describe%>
+                        </div>
+
+                    <%} else {%>
+                        <div class="article-describe elli" id="content">
+                            作者很懒没有写文章介绍
+                        </div>
+                    <% }%>
+
+                    <div class="a-icon">
+                        <!--<svg class="icon3" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_liulan-kongxin"></use>
+                        </svg>-->
+                        <img src="/images/yuedu.svg" style="width: 15px" alt="">
+                        <div>阅读量： <%= item.readNum%> </div>
+                        <!--<svg class="icon4" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_daichuli"></use>
+                        </svg>-->
+                        <img src="/images/shijian.svg" style="width: 15px; margin-left: 15px" alt="">
+                        <div>日期：<%= item.createdAt %></div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    <% }%>
+<% })%>
+

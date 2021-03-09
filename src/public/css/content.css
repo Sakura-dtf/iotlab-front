@@ -1,0 +1,438 @@
+/*导师 介绍 开始 */
+.mentor-title{
+    position: relative;
+    height: 250px;
+}
+
+.mentor-content{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.mentor-content .mentor-item {
+    width: 40%;
+    height: 200px;
+    background: url("../images/role-bg1.png")no-repeat center bottom;
+    background-size: cover;
+    -webkit-background-size: cover;
+    position: relative;
+    transition: 0.5s all ease;
+}
+
+
+.mentor-content .mentor-item:hover{
+    box-shadow: 0 25px 20px -20px rgba(155,165,163,.45);
+    cursor: pointer;
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+
+}
+
+.mentor-item .mentor-img{
+    position: absolute;
+    width: 35%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mentor-item  .mentor-info{
+    width: 60%;
+    left: 35%;
+    position: absolute;
+    height: 200px;
+}
+
+.mentor-item  .mentor-info .mentor-name{
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.mentor-item  .mentor-info .mentor-position{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+.mentor-item  .mentor-info .mentor-describe{
+    margin-top: 15px;
+    font-size: 15px;
+    color: #64b5f6;
+}
+
+
+
+/*  优秀作品  开始*/
+
+.case-title{
+    position: relative;
+    height: 250px;
+}
+.case-bg{
+    position: absolute;
+    background: url("../images/bg_1.png") no-repeat center 28px;
+    width: 100%;
+    min-width: 1200px;
+    height: 250px;
+}
+
+.title-name{
+    position: absolute;
+    width: 100%;
+    min-width: 1200px;
+    top: 94px;
+    text-align: center;
+    font-size: 48px;
+    color: black;
+    font-family: Cambria;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.title-describe{
+    position: absolute;
+    width: 100%;
+    min-width: 1200px;
+    top: 150px;
+    text-align: center;
+    font-size: 24px;
+    color: #555;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.case-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+}
+.case-item{
+    width: 33%;
+    height: 480px;
+    padding: 0 30px 0 35px;
+    margin-top: 62px;
+    cursor: pointer;
+}
+
+
+.case-img{
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    z-index: 10000;
+}
+
+.case-img img{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 420px;
+    transition: all ease 1s;
+    z-index: 100;
+}
+/*.case-item img:hover{
+    transform: scale(1.1);
+    -webkit-filter: grayscale(60%); !* Chrome, Safari, Opera *!
+    filter: grayscale(60%);
+    z-index: 0;
+}*/
+
+.active .case-img img {
+    transform: scale(1.1);
+    -webkit-filter: grayscale(80%); /* Chrome, Safari, Opera */
+    filter: grayscale(80%);
+    z-index: 0;
+}
+
+.case-item .border{
+    width: 86%;
+    height: 86%;
+    border: solid 1px white !important;
+    position: absolute;
+    left: 7%;
+    top: 7%;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.case-item .case-title{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    z-index: 1000;
+    opacity: 0;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+.active .case-title, .active .border{
+    opacity: 1;
+    z-index: 1000;
+}
+
+
+.case-title .case-name{
+    width: 100%;
+    text-align: center;
+    padding: 0 50px;
+    position: absolute;
+    background: url(../images/bian_3.png) no-repeat center bottom;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+}
+
+
+
+.active .case-name{
+    opacity: 1;
+}
+
+
+.active .case-describe{
+    width: 90%;
+    padding: 0 10px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 53%;
+    font-size: 14px;
+    color: white;
+    line-height: 24px;
+    height: 48px;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: -33px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.active .case-describe {
+    opacity: 1;
+}
+
+
+.case-icon{
+    background: url("../images/btn3.png") no-repeat;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+
+.case-tit {
+    margin-top: 10px;
+}
+
+
+.case-tit a{
+    display: block;
+    width: 80%;
+    float: left;
+    font-size: 20px;
+    color: #333;
+    line-height: 38px;
+}
+
+.case-tit a:hover{
+    color: red;
+}
+
+
+.case-tit img{
+
+    transition: all ease .5s;
+}
+
+
+.case-tit img:hover{
+    transform: rotateY(180deg);
+}
+
+/* 优秀作品结束 */
+
+
+
+/*  方向简介  */
+
+.direction{
+    width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.direction-title{
+    position: relative;
+    height: 250px;
+}
+
+
+.direction-content .top{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.direction-content .top li{
+    z-index: 10000;
+    width: 16%;
+    height: 225px;
+    background-color: #212121;
+}
+
+.direction-content .top li a{
+    display: block;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    background: url("../images/bg_2.png");
+    padding-top: 35px;
+}
+
+
+.box img{
+    width: 60%;
+    height: 100px;
+}
+
+
+.direction-content a{
+    color: #ffffff;
+}
+.direction-content a:hover{
+    color: #ffffff;
+}
+
+.direction-content a h5{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.direction-content a h6{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.active .box{
+    background: none;
+    background-color: #f5f5f5;
+    transform: rotateY(180deg);
+    transition: 1s all ease;
+}
+
+.active{
+    background: none !important;
+    transition: 0.4s all ease;
+}
+
+
+.direction-content .bottom{
+    position: absolute;
+    width: 100%;
+    min-width: 1200px;
+    height: 400px;
+}
+
+
+.direction-content .bottom .bottom-box{
+    position: absolute;
+    width: 100%;
+    min-width: 1200px;
+    height: 450px;
+    top: -214px;
+    display: none
+}
+
+.activeBg{
+    display: block !important;
+}
+
+
+.bottom .box-describe1{
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+}
+
+.bottom .box-describe2{
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%);
+}
+
+.bottom .btn{
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    width: 150px;
+    color: #fff;
+}
+
+/*  方向简介 结束*/
+
+
+
+/* 页尾 开始 */
+
+#footer{
+    width: 100%;
+    height: 100px;
+    margin-top: 400px;
+    background-color: #000000;
+}
+
+.footer{
+    width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.footer .footer-item{
+    line-height: 100px;
+    font-size: 14px;
+}
+
+
+/* 页尾 结束*/

@@ -1,0 +1,170 @@
+<%- include('layout/header', {metas: [{link: 'essay.css'}]});  %>
+
+
+<!-- 背景 开始-->
+
+<div class="essay-bg-container">
+    <div class="essay-bg">
+
+    </div>
+</div>
+
+<!-- 背景 结束-->
+
+
+<!--导航开始-->
+
+<%- include('layout/nav') %>
+
+<!--导航结束-->
+
+
+<!-- 文章 开始 -->
+
+
+<div id="essay" class="my-container">
+    <div class="essay">
+        <div class="essay-content card">
+            <div class="card-body">
+                <div class="essay-title">
+                    <%= data.data.articleInfo.title %>
+                </div>
+                <div class="essay-info">
+                    <div class="a-icon">
+                        <!--<svg class="icon3" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_liulan-kongxin"></use>
+                        </svg>-->
+                        <img src="/images/yuedu.svg" style="width: 15px" alt="">
+                        <div>阅读量： <%= data.data.articleInfo.readNum%> </div>
+                        <!--<svg class="icon4" aria-hidden="true">
+                            <use xlink:href="#icon-iconfonttubiao_daichuli"></use>
+                        </svg>-->
+                        <img src="/images/shijian.svg" style="width: 15px; margin-left: 15px" alt="">
+                        <div>日期：<%= data.data.articleInfo.createdAt %></div>
+                    </div>
+
+                </div>
+                <div class="essay-detail markdown-body" id="content" style="margin-top: 20px;line-height: 2rem">
+
+                </div>
+            </div>
+        </div>
+        <div class="essay-author">
+<!--
+            <div class="author-title">作者信息</div>
+-->
+
+            <div class="card" style="min-height: 0">
+                <div class="author-info">
+                    <% if(data.data.articleInfo.user.avatar){ %>
+                        <img src="<%= data.data.articleInfo.user.avatar %>" alt="">
+                    <% } else { %>
+                        <img src="/images/person5.jpg" alt="" style="width: 120px; height: 120px; border-radius: 50%;">
+                    <% }%>
+
+                </div>
+
+                <div class="info-container">
+                    <div class="author-name">
+                        <div class="author-top">
+                            姓名
+                        </div>
+                        <div class="author-bottom"><%= data.data.articleInfo.user.name %></div>
+                    </div>
+                    <div class="author-articleNum">
+                        <div class="author-top">
+                            文章数量
+                        </div>
+                        <div class="author-bottom"><%= data.data.userInfo.length -1 %></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="author-article">
+                文章列表
+            </div>
+            <% data.data.userArticle.forEach((item,i)=> { %>
+                <div class="collapse-container">
+                    <a class="" data-toggle="collapse" href="#collapse<%= i%>" role="button" aria-expanded="false" aria-controls="collapse<%= i%>">
+                        <%= item.categoryName %>
+                    </a>
+                </div>
+                <div class="collapse collapse-content" id="collapse<%= i%>">
+                    <div class="card card-body">
+                        <% item.articles.forEach( article => { %>
+                            <a href="/essay1/<%= article.id %>">
+                                <%= article.title %>
+                            </a>
+                        <% })%>
+                    </div>
+                </div>
+            <% }) %>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- 文章 结束 -->
+
+
+<!-- 尾部 开始-->
+
+
+<div id="footer">
+    <div class="footer">
+        <div class="footer-item">
+            © CopyRight 2015-2020 长沙理工大学物联网实验室
+        </div>
+        <div class="footer-item">
+            湘ICP备20001647号
+        </div>
+        <div class="footer-item">
+            通讯地址:湖南省长沙市天心区万家丽南路2段960号
+        </div>
+        <div class="footer-item">
+            邮编:410076
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function(){
+        $.ajax({
+            //请求方式
+            type : "GET",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "/essayApi/getContent",
+            //数据，json字符串
+            data: {
+                id: <%= data.data.articleInfo.id %>
+            },
+            //请求成功
+            success : function(result) {
+                console.log(result);
+                let str = JSON.parse(result.data.articleInfo.content);
+                //console.log(str);
+                let html = marked( str  || '')
+                console.log(html);
+                $('#content').html(html);
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+
+    })
+
+</script>
+
+
+
+</body>
+</html>

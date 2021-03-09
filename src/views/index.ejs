@@ -1,0 +1,380 @@
+
+
+<%- include('layout/header', {metas: [{link: 'content.css'}]});  %>
+
+<!--背景图片开始-->
+<div class="bg-container">
+    <div class="bg-view"></div>
+    <div class="bg-img"></div>
+    <div class="bg-image"></div>
+    <div class="fly1"></div>
+    <div class="fly2"></div>
+    <div class="fly3"></div>
+    <div class="name"> 物联网实验室</div>
+    <div class="describe">致力于人才培养，让梦想起飞</div>
+    <div class="btn-container">
+        <button type="button" class="btn btn-light">加入我们</button>
+    </div>
+</div>
+<!--背景图片结束-->
+
+
+
+<%- include('layout/nav') %>
+
+
+<!--导航结束-->
+
+<!--空div占位-->
+<div style="opacity: 0;height: 590px;width: 100%"></div>
+
+
+<!-- 导师介绍  开始-->
+<div id="mentor" class="my-container">
+    <div class="mentor">
+        <div class="mentor-title wow fadeInUp ">
+            <div class="case-bg">
+
+            </div>
+            <div class="title-name">
+                OUTSANDING MENTOR
+            </div>
+            <div class="title-describe">
+                杰出导师 / 指明你前进的道路
+            </div>
+        </div>
+    </div>
+    <div class="mentor-content">
+        <div class="mentor-item wow bounceInLeft">
+            <div class="mentor-img">
+                <img src="images/avatar.jpg" style="width: 100px;height: 100px;border-radius: 50%" alt="">
+            </div>
+            <div class="mentor-info">
+                <div class="mentor-name">
+                    王静
+                </div>
+                <div class="mentor-position">
+                    执行负责人 | 团队创始人 | 网络工程系教师
+                </div>
+                <div class="mentor-describe">
+                    王静老师是创新创业、学科竞赛优秀导师，现任网络系系主任。现在主要研究物联网、智能信息处理。
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mentor-item wow bounceInRight">
+            <div class="mentor-img">
+                <img src="images/avatar.jpg" style="width: 100px;height: 100px;border-radius: 50%" alt="">
+            </div>
+            <div class="mentor-info">
+                <div class="mentor-name">
+                    夏卓群
+                </div>
+                <div class="mentor-position">
+                    总负责人 | 中南大学博士 | 国防科技大学博士后
+                </div>
+                <div class="mentor-describe">
+                    夏卓群老师是现任长沙理工大学教授，副院长，硕士研究生导师，计算机学会高级会员。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 导师介绍  结束-->
+
+<!-- 优秀案例 开始-->
+<div id="case" class="my-container">
+    <div class="case">
+        <div class="case-title wow fadeInUp ">
+            <div class="case-bg">
+
+            </div>
+            <div class="title-name">
+                EXCELLENT CASE
+            </div>
+            <div class="title-describe">
+                优秀案例 / 用智慧获取更优秀的赛事奖励
+            </div>
+        </div>
+        <div class="case-content">
+            <% if(projectList.data){ %>
+                <% projectList.data.forEach( item => { %>
+                    <% if( item.image ) { %>
+                        <a href="/essay2/<%= item.id %>">
+                            <div class="case-item wow fadeInUp">
+                                <div class="case-img">
+                                    <img src="<%= item.image %>" alt="">
+                                    <div class="border"></div>
+                                    <div class="case-title">
+                                        <div class="case-name elli"><%= item.title %></div>
+                                        <div class="case-icon"></div>
+                                        <div class="case-describe"><%= item.describe %></div>
+                                    </div>
+                                </div>
+                                <div class="case-tit">
+                                    <a href="" class="elli"><%= item.title %></a>
+                                    <span class="clearfix">
+                        <img src="images/ico_4.png" class="float-right" style="width: 30px;height: 30px" alt="">
+                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    <% } else {%>
+                        <a href="/essay2/<%= item.id %>">
+                            <div class="case-item wow fadeInUp">
+                                <div class="case-img">
+                                    <img src="./images/case1.jpg" alt="">
+                                    <div class="border"></div>
+                                    <div class="case-title">
+                                        <div class="case-name elli"><%= item.title %></div>
+                                        <div class="case-icon"></div>
+                                        <div class="case-describe"><%= item.describe %></div>
+                                    </div>
+                                </div>
+                                <div class="case-tit">
+                                    <a href="" class="elli"><%= item.title %></a>
+                                    <span class="clearfix">
+                                        <img src="images/ico_4.png" class="float-right" style="width: 30px;height: 30px" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                <% }) %>
+            <% } else { %>
+                <div style="width: 80%;height: 400px;margin: 0 auto">
+                        <img src="/images/404.jpg" style="width: 80%;height: 400px;transform: translateX(-50%);margin-left: 50%;" alt="暂无文章数据">
+                </div>
+            <% } %>
+
+
+
+            <!--<div class="case-item wow fadeInUp">
+                <div class="case-img">
+                    <img src="./images/case1.jpg" alt="">
+                    <div class="border"></div>
+                    <div class="case-title">
+                        <div class="case-name elli">交通场景应用项目</div>
+                        <div class="case-icon"></div>
+                        <div class="case-describe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+                <div class="case-tit">
+                    <a href="">交通场景应用项目</a>
+                    <span class="clearfix">
+                        <img src="images/ico_4.png" class="float-right" style="width: 30px;height: 30px" alt="">
+                    </span>
+                </div>
+            </div>
+            <div class="case-item wow fadeInUp">
+                <div class="case-img">
+                    <img src="./images/case1.jpg" alt="">
+                    <div class="border"></div>
+                    <div class="case-title">
+                        <div class="case-name elli">交通场景应用项目</div>
+                        <div class="case-icon"></div>
+                        <div class="case-describe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+                <div class="case-tit">
+                    <a href="">交通场景应用项目</a>
+                    <span class="clearfix">
+                        <img src="images/ico_4.png" class="float-right" style="width: 30px;height: 30px" alt="">
+                    </span>
+                </div>
+            </div>
+            <div class="case-item wow fadeInUp">
+                <div class="case-img">
+                    <img src="./images/case1.jpg" alt="">
+                    <div class="border"></div>
+                    <div class="case-title">
+                        <div class="case-name elli">交通场景应用项目</div>
+                        <div class="case-icon"></div>
+                        <div class="case-describe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+                <div class="case-tit">
+                    <a href="">交通场景应用项目</a>
+                    <span class="clearfix">
+                        <img src="images/ico_4.png" class="float-right" style="width: 30px;height: 30px" alt="">
+                    </span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+<!--优秀案例 结束-->
+
+
+
+<!-- 方向介绍 -->
+<div id="direction" class="my-container">
+    <div class="direction">
+        <div class="direction-title wow fadeInUp ">
+            <div class="case-bg">
+
+            </div>
+            <div class="title-name">
+                TECHNICAL DIRECTION
+            </div>
+            <div class="title-describe">
+                技术方向 / 找到一个自己喜欢的方向
+            </div>
+        </div>
+        <div class="direction-content">
+            <ul class="top">
+                <li data-index = "0" class="wow fadeInUp">
+                    <a href="">
+                        <div class="box">
+                            <img src="images/img1.png" alt="">
+                        </div>
+                        <h5>人工智能研究</h5>
+                        <h6>中国媒体十大流行语</h6>
+                    </a>
+                </li>
+                <li data-index = "1" class="wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="">
+                        <div class="box">
+                            <img src="images/img2.png" alt="">
+                        </div>
+                        <h5>Web前端开发</h5>
+                        <h6>Web前端是个庞大的集团</h6>
+                    </a>
+                </li>
+                <li data-index = "2" class="wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="">
+                        <div class="box">
+                            <img src="images/img3.png" alt="">
+                        </div>
+                        <h5>Web后端开发</h5>
+                        <h6>经久不衰的Web后端</h6>
+                    </a>
+                </li>
+                <li data-index = "3" class="wow fadeInUp" data-wow-delay="0.9s">
+                    <a href="">
+                        <div class="box">
+                            <img src="images/img4.png" alt="">
+                        </div>
+                        <h5>Android开发</h5>
+                        <h6>安卓app开发</h6>
+                    </a>
+                </li>
+                <li data-index = "4" class="wow fadeInUp" data-wow-delay="1.2s">
+                    <a href="">
+                        <div class="box">
+                            <img src="images/img4.png" alt="">
+                        </div>
+                        <h5>硬件开发</h5>
+                        <h6>计算机进步的基础</h6>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- 全屏的背景图片 -->
+<div class="direction-content">
+    <div class="bottom">
+        <div class="activeBg bottom-box" style="background: url('images/img-bg1.jpg');" >
+            <div class="box-describe1">
+                人工智能方向
+            </div>
+            <div class="box-describe2">
+                目前热度最火的一门科学技术
+            </div>
+            <button type="button" class="btn btn-outline-info">了解详情</button>
+        </div>
+        <div class="bottom-box" style="background: url('images/img-bg2.jpg');">
+            <div class="box-describe1">
+                Web前端开发
+            </div>
+            <div class="box-describe2">
+                Web前端目前发展空间很大的一门技术
+            </div>
+            <button type="button" class="btn btn-outline-info">了解详情</button>
+        </div>
+        <div class="bottom-box" style="background: url('images/img-bg3.jpg');">
+            <div class="box-describe1">
+                Web后端开发
+            </div>
+            <div class="box-describe2">
+                经久不衰，Web后端依然拥有强大的生命力
+            </div>
+            <button type="button"  class="btn btn-outline-info">了解详情</button>
+        </div>
+        <div class="bottom-box" style="background: url('images/img-bg4.jpg');">
+            <div class="box-describe1">
+                Android开发
+            </div>
+            <div class="box-describe2">
+                安卓应用开发与我们息息相关
+            </div>
+            <button type="button" class="btn btn-outline-info">了解详情</button>
+        </div>
+        <div class="bottom-box" style="background: url('images/img-bg5.jpg');">
+            <div class="box-describe1">
+                硬件方向
+            </div>
+            <div class="box-describe2">
+                硬件是计算机组成的基石
+            </div>
+            <button type="button" class="btn btn-outline-info">了解详情</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 方向介绍结束-->
+
+
+<!-- 尾部 开始-->
+    <div id="footer">
+        <div class="footer">
+            <div class="footer-item">
+                © CopyRight 2015-2020 长沙理工大学物联网实验室
+            </div>
+            <div class="footer-item">
+                湘ICP备20001647号
+            </div>
+            <div class="footer-item">
+                通讯地址:湖南省长沙市天心区万家丽南路2段960号
+            </div>
+            <div class="footer-item">
+                邮编:410076
+            </div>
+        </div>
+    </div>
+<!-- 尾部 结束-->
+
+
+
+
+
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/index.js"></script>
+
+
+<!--注册wow-->
+<script src="/js/wow.min.js"></script>
+<script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+        new WOW().init();
+    };
+
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'wow',
+        offset: 0,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+</body>
+</html>

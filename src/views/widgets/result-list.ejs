@@ -1,0 +1,84 @@
+<% data.forEach( (item,i) => { %>
+    <% if( i % 2 != 0 ) { %>
+        <% if(item.image) { %>
+            <div class="result-item-container my-container  one">
+                <div class="result-item">
+                    <div class="result-info-container wow fadeInLeft">
+                        <div class="result-info">
+                            <div class="result-title">
+                                <%= item.title %>
+                            </div>
+                            <div class="result-describe">
+                                <%= item.describe %>
+                            </div>
+                            <a href="/essay2/<%= item.id %>" role="button" type="button" class="btn btn-outline-secondary" >了解详情</a>
+                        </div>
+                    </div>
+                    <div class="result-img wow fadeInRight">
+                        <img src="<%= item.image %>" alt="">
+                    </div>
+                </div>
+            </div>
+        <% } else {%>
+            <div class="result-item-container my-container  one">
+                <div class="result-item">
+                    <div class="result-info-container wow fadeInLeft">
+                        <div class="result-info">
+                            <div class="result-title">
+                                <%= item.title %>
+                            </div>
+                            <div class="result-describe">
+                                <%= item.describe %>
+                            </div>
+                            <a href="/essay2/<%= item.id %>" role="button" type="button" class="btn btn-outline-secondary" >了解详情</a>
+                        </div>
+                    </div>
+                    <div class="result-img wow fadeInRight">
+                        <img src="/images/img-bg1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+    <% }else { %>
+        <% if(item.image) {%>
+            <div class="result-item-container my-container two">
+                <div class="result-item">
+                    <div class="result-img wow fadeInLeft">
+                        <img src="<%= item.image %>" alt="">
+                    </div>
+                    <div class="result-info-container wow fadeInRight">
+                        <div class="result-info">
+                            <div class="result-title">
+                                <%= item.title %>
+                            </div>
+                            <div class="result-describe">
+                                <%= item.describe %>
+                            </div>
+                            <a href="/essay2/<%= item.id %>" role="button" type="button" class="btn btn-outline-secondary" >了解详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="result-item-container my-container two">
+                <div class="result-item">
+                    <div class="result-img wow fadeInLeft">
+                        <img src="/images/img-bg1.jpg" alt="">
+                    </div>
+                    <div class="result-info-container wow fadeInRight">
+                        <div class="result-info">
+                            <div class="result-title">
+                                <%= item.title %>
+                            </div>
+                            <div class="result-describe">
+                                <%= item.describe %>
+                            </div>
+                            <a href="/essay2/<%= item.id %>" role="button" type="button" class="btn btn-outline-secondary" >了解详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% }%>
+<% }) %>

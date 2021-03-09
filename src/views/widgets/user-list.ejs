@@ -1,0 +1,18 @@
+
+<% data.forEach( user => { %>
+    <% if(user.avatar) {%>
+        <li>
+            <a href="user/<%= user.id %>" class="wow fadeInUp">
+                <img src="<%= user.avatar %>" alt="">
+                <div class="photo-name"><%= user.name %></div>
+            </a>
+        </li>
+    <% } else { %>
+        <li>
+            <a href="user/<%= user.id %>" class="wow fadeInUp">
+                <img src="images/person1.jpg" alt="">
+                <div class="photo-name"><%= user.name %></div>
+            </a>
+        </li>
+    <% } %>
+<% }) %>

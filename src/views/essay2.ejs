@@ -1,0 +1,112 @@
+<%- include('layout/header', {metas: [{link: 'essay.css'}]});  %>
+
+
+
+<!-- 背景 开始-->
+
+<div class="essay-bg-container">
+    <div class="essay-bg">
+
+    </div>
+</div>
+
+<!-- 背景 结束-->
+
+
+<!--导航开始-->
+
+<%- include('layout/nav') %>
+
+<!--导航结束-->
+
+
+<!-- 文章 开始 -->
+
+<div id="essay" class="my-container">
+    <div class="essay">
+        <div class="essay-content card" style="width: 90%">
+            <div class="card-body">
+                <div class="essay-title">
+                    <%= data.data.title %>
+                </div>
+                <div class="essay-info" style="margin-top: 10px">
+                    <div style="color: #000000;font-size: 14px">
+                        <img src="/images/yuedu.svg" style="width: 15px;" alt="">
+                        <%= data.data.readNum %>
+                    </div>
+                    <div style="color: #000000;font-size: 14px">
+                        <img src="/images/shijian.svg" style="width: 15px;margin-left: 30px" alt="">
+                        <%= data.data.createdAt %>
+                    </div>
+                </div>
+                <div class="essay-detail markdown-body" id="content" style="margin-top: 20px;line-height: 2rem">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 文章 结束 -->
+
+
+<!-- 尾部 开始-->
+<div id="footer">
+    <div class="footer">
+        <div class="footer-item">
+            © CopyRight 2015-2020 长沙理工大学物联网实验室
+        </div>
+        <div class="footer-item">
+            湘ICP备20001647号
+        </div>
+        <div class="footer-item">
+            通讯地址:湖南省长沙市天心区万家丽南路2段960号
+        </div>
+        <div class="footer-item">
+            邮编:410076
+        </div>
+    </div>
+</div>
+<!-- 尾部 结束-->
+
+
+<script>
+
+    $(document).ready(function(){
+        $.ajax({
+            //请求方式
+            type : "GET",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "/essayApi/getContent",
+            //数据，json字符串
+            data: {
+                id: <%= id %>
+            },
+            //请求成功
+            success : function(result) {
+                console.log(result);
+                let str = JSON.parse(result.data.articleInfo.content);
+                //console.log(str);
+                let html = marked( str  || '')
+                console.log(html);
+                $('#content').html(html);
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+
+    })
+
+</script>
+
+
+
+
+</body>
+</html>
